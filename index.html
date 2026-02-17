@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Previewer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-content">
+        <h1>Resource Library</h1>
+        <p>Click a file to preview it without leaving the page.</p>
+        
+        <div class="button-group">
+            <button class="view-btn" data-file="manual.pdf">Preview Manual</button>
+            <button class="view-btn" data-file="guide.pdf">Preview Guide</button>
+        </div>
+    </div>
+
+    <div id="pdf-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button id="close-btn">&times; Close Preview</button>
+            <iframe id="pdf-viewer" src="" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
