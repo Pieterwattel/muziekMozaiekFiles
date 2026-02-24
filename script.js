@@ -1,29 +1,28 @@
-const modal = document.getElementById('pdf-modal');
-const iframe = document.getElementById('pdf-viewer');
-const closeBtn = document.getElementById('close-btn');
-const viewButtons = document.querySelectorAll('.view-btn');
+// The list of files inside your /files/ folder
+const myFiles = [
+    "CV Pieter Wattel.pdf",
+    "Motivatiebrief Pieter Wattel.pdf"
+];
 
-// When a button is clicked
-viewButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const fileToLoad = button.getAttribute('data-file');
-        
-        // 1. Set the iframe source to the PDF file
-        iframe.src = fileToLoad;
-        
-        // 2. Show the modal
-        modal.classList.remove('hidden');
-    });
-});
+const grid = document.getElementById('file-grid');
 
-// When the close button is clicked
-closeBtn.addEventListener('click', () => {
-    modal.classList.add('hidden');
-    iframe.src = ""; // Stop the PDF from loading in the background
-});
+myFiles.forEach(fileName => {
+    const lastDot = fileName.lastIndexOf('.');
+    const name = fileName.substring(0, lastDot);
+    const ext = fileName.substring(lastDot + 1);
 
-// Also close if the user clicks the dark background
-document.querySelector('.modal-overlay').addEventListener('click', () => {
-    modal.classList.add('hidden');
-    iframe.src = "";
+    const card = document.createElement('div');
+    card.className = 'file-card';
+
+    card.innerHTML = `
+        <div class="file-info">
+            <span class="file-title">${name}</span>
+            <span class="file-ext">${ext.toUpperCase()} File</span>
+        </div>
+        <a href="files/${fileName}" download="${fileName}" target="_blank" class="down-btn">
+            Download
+        </a>
+    `;
+
+    grid.appendChild(card);
 });

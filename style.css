@@ -1,0 +1,65 @@
+body { 
+    font-family: 'Segoe UI', system-ui, sans-serif; 
+    background-color: #D87B2E; 
+    margin: 0; padding: 50px 20px; 
+    color: #222;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container { max-width: 600px; margin: 0 auto; text-align: center;}
+
+h1 { margin-bottom: 40px; color: #222; }
+
+.file-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Individual File Divs */
+.file-card {
+    background: #FBCFCB;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: 1px solid #E84F2F;
+}
+
+.file-info { text-align: left; }
+
+.file-title { 
+    display: block; 
+    font-weight: 600; 
+    font-size: 1.1em; 
+    color: #222; 
+}
+
+.file-ext { 
+    font-size: 0.85em; 
+    color: #444444; 
+    text-transform: uppercase;
+}
+
+/* Download Button */
+.down-btn {
+    background: #308774;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.down-btn:hover {
+    background: #218838;
+}
